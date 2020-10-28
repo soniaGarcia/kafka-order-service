@@ -1,0 +1,23 @@
+type OrderResponseDTO {
+	id: ID!,
+	userId: Int,
+	productId: Int,
+	price: Int,
+	status: String
+}
+
+type Query {
+	ordenes:[OrderResponseDTO]
+}
+
+type PurchaseOrder {
+	id: ID!,
+	userId: Int,
+	productId: Int,
+	price: Int,
+	status: String
+}
+
+type Mutation {
+	createOrder(userId: String, productId: String):PurchaseOrder
+}
