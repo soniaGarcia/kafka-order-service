@@ -11,7 +11,7 @@ RUN ls -la /app/target
 FROM openjdk:8-jdk-alpine
 LABEL maintainer="sonia.guadalupe.garcia@gmail.com"
 WORKDIR /workspaces
-RUN ls -la /workspaces
+#RUN ls -la /workspaces
 #EXPOSE 8080
 #RUN ls -la /app
 COPY --from=builder /app/target/*.jar app.jar
