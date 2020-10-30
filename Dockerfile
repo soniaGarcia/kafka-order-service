@@ -16,4 +16,4 @@ WORKDIR /workspaces
 #RUN ls -la /app
 COPY --from=builder /app/target/*.jar app.jar
 RUN ls -la /workspaces/app.jar
-ENTRYPOINT exec java -jar app.jar
+ENTRYPOINT exec java -jar app.jar/kafka-saga-pattern-0.0.1-SNAPSHOT.jar
