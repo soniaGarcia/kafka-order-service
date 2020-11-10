@@ -2,7 +2,9 @@ server:
   port: 8080
   
 spring.cloud.stream.kafka.binder.brokers: 172.17.0.8:9092
-          
+spring.cloud.stream.kafka.consumer.properties.spring.json.use.type.headers: false
+spring.cloud.stream.kafka.producer.properties.spring.json.use.type.headers: false
+
 spring.cloud.stream:
   function:
     definition: orderEventPublisher;paymentEventConsumer;historyEventPublisher
@@ -13,16 +15,3 @@ spring.cloud.stream:
       destination: payment-events
     historyEventPublisher-out-0:
       destination: history-events
-
-spring:
-  kafka:
-    consumer:
-      properties:
-        spring:
-          json:
-            use.type.headers: false
-    producer:
-      properties:
-        spring:
-          json:
-            add.type.headers: false
