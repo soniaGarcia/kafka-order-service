@@ -13,3 +13,16 @@ spring.cloud.stream:
       destination: payment-events
     historyEventPublisher-out-0:
       destination: history-events
+
+spring:
+  kafka:
+    consumer:
+      properties:
+        spring:
+          json:
+            use.type.headers: false
+    producer:
+      properties:
+        spring:
+          json:
+            add.type.headers: false
